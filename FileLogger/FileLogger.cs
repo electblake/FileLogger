@@ -16,9 +16,9 @@ namespace FileLogger
         private bool _active;
         private readonly string _dateTimeFormat;
         private DateTime _currentDate;
-        private Action<Exception, StringBuilder> _onException;
+        private Action<Exception, StringBuilder>? _onException;
 
-        public FileLogger(string folderName, string? folderDirectory = null, string? dateTimeFormat = null, Action<Exception, StringBuilder> onException = null)
+        public FileLogger(string folderName, string? folderDirectory = null, string? dateTimeFormat = null, Action<Exception, StringBuilder>? onException = null)
         {
             folderDirectory ??= Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             _dateTimeFormat = dateTimeFormat ?? "dddd, dd MMMM yyyy";
